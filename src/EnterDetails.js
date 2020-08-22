@@ -51,7 +51,7 @@ class EnterDetails extends React.Component {
   };
 
   editEntry = (id) => {
-    const tempArray = this.state.detailsArray.find((task) => task.id === id);
+    const tempArray = this.state.detailsArray.find((task) => task.id === id); // do not use filter as it will return array and its attributes will not be accessible by . operator
     this.setState({
       isEditing: true,
       editId: id,
@@ -73,6 +73,7 @@ class EnterDetails extends React.Component {
     console.log("index", index);
 
     temp[index] = {
+      // [] are not needed as the object is already there
       ...temp[index],
 
       name: this.state.name,
